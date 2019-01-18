@@ -86,12 +86,12 @@ app.controller('ProgressBookController', ['$scope', 'GetBookService', 'ModifyPro
 	$scope.saveProgress = function() {
 		var el = document.getElementById('progress');
 
-		if($scope.book.progress >= 0) {
+		if ($scope.book.progress >= 0) {
 			el.classList.remove('red-border');
 			$scope.book.rating = $scope.data.selectedOption.id;
 			ModifyProgressService.progressBook($scope.book);
 		} else {
-			el.classList.add( 'red-border');
+			el.classList.add('red-border');
 		}
 	};
 
