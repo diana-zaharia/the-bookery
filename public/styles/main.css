@@ -1,0 +1,276 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+	background-color: #AAC4DA;
+	font-family: sans-serif;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+#authContainer {
+	margin:60px auto 0 auto;
+	width:500px;
+}
+
+#authHeader {
+	border-radius: 4px 4px 0px 0px;
+	-moz-border-radius: 4px 4px 0px 0px;
+	-webkit-border-radius: 4px 4px 0px 0px;
+	height: 50px;
+	padding: 15px 0 0 15px;
+	font-size: 20px;
+	color: #fff;
+	background-color: #337ab7;
+}
+
+#authFooter {
+	border-radius: 0px 0px 4px 4px;
+	-moz-border-radius:  0px 0px 4px 4px;
+	-webkit-border-radius:  0px 0px 4px 4px;
+	height: 50px;
+	padding: 15px 0 0 15px;
+	font-size: 20px;
+	color: #fff;
+	background-color: #337ab7;
+}
+
+#authWrapper {
+	background-color: #EAEAEA;
+}
+
+#authWrapper button {
+	width:180px;
+	height: 45px;
+}
+
+.btn {
+	font-size: 18px;
+	margin-top:20px;
+	width:180px;
+	height: 45px;
+}
+#search-menu .btn-primary {
+	margin-top: -2px;
+	width: 50px;
+	height: 33px;
+	padding:0;
+}
+
+th {
+	color:#286090;
+	font-size: 17px;
+}
+.search {
+	margin-left: 20px;
+	padding-left: 10px;
+	border-radius: 4px;
+	border:1px solid #ccc;
+	height: 34px;
+	width: 200px;
+}
+
+.arrow-up {
+		margin: 10px 0px 0px 5px;
+ 	  height: 0;
+ 	  position: absolute;
+ 	  width: 0;
+ 	  border: 5px solid transparent;
+ 	  border-top-color: #286090;
+}
+
+.arrow-down {
+	margin: 5px 0px 0px 5px;
+	height: 0;
+	position: absolute;
+	width: 0;
+	border: 5px solid transparent;
+	border-bottom-color: #286090;
+}
+
+.progress {
+	background-color: #C1C1C1;
+	margin-left: 22px;
+}
+
+#progressEdit {
+	display:inline-block;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	background-size: cover;
+	background-image: url('../assets/edit.png');
+}
+
+#textAreaProgress {
+	width: 300px !important;
+}
+
+.btnRegister {
+	margin-bottom: 20px;
+}
+a.btn {
+	padding-top:10px;
+}
+
+.default-label {
+	margin-top:20px;
+	margin-bottom: 5px;
+	font-size: 18px;
+}
+
+.form-control {
+	width: 200px;
+	margin:0 auto;
+	font-family: sans-serif;
+}
+
+#defaultWrapper .form-control {
+	width: 200px;
+	margin:10px 20px 20px 20px;
+}
+#authContainer ul {
+	padding-top: 20px;
+}
+
+#authContainer li {
+	text-align: center;
+}
+
+.register .form-control {
+	margin-top:20px;
+}
+
+#defaultContainer {
+ margin: 60px auto 0 auto;
+ width: 900px;
+}
+
+.links {
+	padding-left:10px;
+}
+
+.navig  ul {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #337ab7;
+	border:1px solid transparent;
+	border-radius:  4px 4px 0px 0px;
+	border-bottom: none;
+}
+
+.navig  li {
+	float: left;
+}
+
+.navig  li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.navig  li a:hover:not(.active) {
+	background-color: #286090;
+}
+
+.navig  .active {
+	background-color: #286090;
+}
+
+#defaultHeader h1 {
+	padding:0px 0px 10px 10px;
+	color:#fff;
+	font-size: 35px;
+}
+
+#defaultHeader span {
+	color:#337ab7;
+}
+#defaultWrapper {
+	background-color: #EAEAEA;
+	overflow: overlay;
+}
+
+#defaultFooter {
+	border-radius: 0px 0px 4px 4px;
+	-moz-border-radius:  0px 0px 4px 4px;
+	-webkit-border-radius:  0px 0px 4px 4px;
+	height: 50px;
+	padding: 15px 0 0 15px;
+	font-size: 20px;
+	color: #fff;
+	background-color: #337ab7;
+}
+
+#defaultWrapper h1 {
+	padding:20px 0px 10px 10px;
+	color:#286090;
+	font-size: 28px;
+}
+
+#selectRating {
+	width:80px;
+	height: 30px;
+	margin-bottom: 10px;
+	margin-left: 22px;
+}
+
+#defaultHeader h2 {
+	float:left;
+	display:inline-block;
+	color:#fff;
+}
+
+.red-border {
+	border:1px solid red;
+}
+.labelRating {
+		color:#7D7B7B;
+		margin-left:30px;
+		font-size: 15px;
+}
+
+#addEditBook {
+	text-align: center;
+	margin-bottom: 20px;
+}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html ng-app="login">
+<head>
+	<title> GoodyReads </title>
+	<link rel="stylesheet" href="./public/styles/bootstrap.css">
+	<link rel="stylesheet" href="./public/styles/main.css">
+	<script src="./public/vendors/angular.js"></script>
+	<script src="./public/js/login.js"></script>
+</head>
+
+<body ng-controller="LoginController">
+	<div id="authContainer">
+		<div id="defaultHeader">
+			<h1> goody<span>reads</span></h1>
+		</div>
+		<div id="authHeader">
+			<h1> Log in </h1>
+		</div>
+		<div id="authWrapper" class="login">
+			<form novalidate>
+				<ul>
+					<li>
+						<label for="username" class="default-label">Username:</label>
+						<input type="text" name="username" id="username" class="form-control" ng-model="username">
+					</li>
+					<li>
+						<label for="password" class="default-label">Password:</label>
+						<input type="password" name="password" id="password" class="form-control" ng-model="password">
+					</li>
+					<li>
+						<button type="submit" class="btn btn-success" ng-click="login()">Sign in</button>
+					</li>
+					<li>
+						<a href="register.html" class="btn btn-success btnRegister">Register</a>
+					</li>
+			</ul>
+			</form>
+		</div>
+		<div id="authFooter">
+		</div>
+</div>
+</body>
+
+</html>

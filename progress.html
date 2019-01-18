@@ -1,0 +1,65 @@
+<!doctype html>
+<html ng-app="progress.book">
+<head>
+	<title> GoodyReads </title>
+	<meta http-equiv="Expires" CONTENT="0">
+	<meta http-equiv="Cache-Control" CONTENT="no-cache">
+	<meta http-equiv="Pragma" CONTENT="no-cache">
+	<link rel="stylesheet" href="./public/styles/bootstrap.css">
+	<link rel="stylesheet" href="./public/styles/main.css">
+	<script src="./public/js/refresh.js"></script>
+	<script src="./public/vendors/angular.js"></script>
+	<script src="./public/js/progress.js"></script>
+</head>
+
+<body ng-controller="ProgressBookController">
+	<input type="hidden" id="refresh" value="no">
+	<div id="defaultContainer">
+		<div id="defaultHeader">
+			<h1> goody<span>reads</span></h1>
+		</div>
+		<nav class="navig">
+			<ul>
+				<li><a href="dashboard.html">Dashboard</a></li>
+				<li><a href="addBook.html">Add book</a></li>
+				<li><a href="/logout">Logout</a></li>
+			</ul>
+		</nav>
+		<div id="defaultWrapper">
+			<h1> Add progress</h1>
+			<form novalidate="">
+				<ul>
+					<li>
+						<label class="labelRating">Rating</label>
+						<select name="ratingSelect" id="selectRating"
+							ng-options="option.name for option in data.availableOptions track by option.id"
+							ng-model="data.selectedOption">
+						</select>
+					</li>
+					<li>
+						<label class="labelRating"> Pages </label>
+						<input type="number" name="pages" placeholder="No. of pages" id="pages" class="form-control" ng-model="book.pages">
+					</li>
+					<li>
+						<label class="labelRating"> Progress </label>
+						<input type="number" name="progress" placeholder="Progress" id="progress" class="form-control" ng-model="book.progress" max = "{{book.pages}}">
+					</li>
+					<li>
+						<label class="labelRating"> Review </label>
+						<textarea rows="4" cols="50" placeholder="Write a review" class="form-control" id="textAreaProgress" ng-model="book.review"></textarea>
+					</li>
+					<li id="addEditBook">
+						<button type="submit" name="save" class="btn btn-primary" ng-click="saveProgress()">Save</button>
+						<button type="submit" name="cancel" class="btn btn-primary " ng-click="cancel()">Cancel</button>
+					</li>
+			</ul>
+			</form>
+		</div>
+
+		<div id="defaultFooter">
+		</div>
+
+	</div>
+</body>
+
+</html>

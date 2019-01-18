@@ -1,0 +1,57 @@
+<!doctype html>
+<html ng-app="register">
+<head>
+	<title> GoodyReads </title>
+	<link rel="stylesheet" href="./public/styles/bootstrap.css">
+	<link rel="stylesheet" href="./public/styles/main.css">
+	<script src="./public/js/refresh.js"></script>
+	<script src="./public/vendors/angular.js"></script>
+	<script src="./public/js/register.js"></script>
+</head>
+
+<body ng-controller = "RegisterController">
+	<input type="hidden" id="refresh" value="no">
+	<div id="authContainer">
+		<div id="defaultHeader">
+			<h1> goody<span>reads</span></h1>
+		</div>
+		<div id="authHeader">
+			<h1> Register </h1>
+		</div>
+		<div id="authWrapper" class="register">
+			<form novalidate>
+				<ul>
+					<a href="login.html" class="links"> < Back to Login</a>
+					<li>
+						<input type="text" name="username" placeholder="Username" id="username" class="form-control" ng-model="user.username">
+					</li>
+					<li>
+						<input type="text" name="firstName" placeholder="First Name" id="firstName" class="form-control" ng-model="user.firstName">
+					</li>
+					<li>
+						<input type="text" name="lastName" placeholder="Last Name" id="lastName" class="form-control" ng-model="user.lastName">
+					</li>
+					<li>
+						<input type="text" name="email" placeholder="E-mail" id="email" class="form-control" ng-model="user.email">
+					</li>
+					<li>
+						<input type="password" name="password"  placeholder="Password" id="password" class="form-control" ng-model="user.password">
+					</li>
+					<li>
+						<input type="password" name="confirmPassword"  placeholder="Confirm password" id="confirmPassword" class="form-control">
+					</li>
+					<li ng-show="registerFail === true">
+						<p style="margin-top:15px; color:red;"> Some fields are wrong! </p>
+					<li>
+					<li>
+						<button type="submit" class="btn btn-success btnRegister" ng-click="register()">Register</button>
+					</li>
+			</ul>
+			</form>
+		</div>
+		<div id="authFooter">
+		</div>
+</div>
+</body>
+
+</html>

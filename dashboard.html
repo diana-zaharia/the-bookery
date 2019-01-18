@@ -1,0 +1,109 @@
+<!doctype html>
+<html ng-app="dashboard">
+	<head>
+		<title> GoodyReads </title>
+		<link rel="stylesheet" href="./public/styles/bootstrap.css">
+		<link rel="stylesheet" href="./public/styles/main.css">
+		<script src="./public/js/refresh.js"></script>
+		<script src="./public/vendors/angular.js"></script>
+		<script src="./public/js/dashboard.js"></script>
+	</head>
+	<body ng-controller="DashboardController">
+		<input type="hidden" id="refresh" value="no">
+		<div id="defaultContainer">
+			<div id="defaultHeader">
+				<h1 style="float:left"> goody<span>reads</span></h1>
+				<h2 style="float:right; padding-top:20px;"> Welcome, <span>{{currentUser}}<span> </h2>
+			</div>
+			<nav class="navig" style="clear:both">
+				<ul>
+					<li class="active"><a href="dashboard.html">Dashboard</a></li>
+					<li><a href="addBook.html">Add book</a></li>
+					<li><a href="logout">Logout</a></li>
+				</ul>
+			</nav>
+			<div id="defaultWrapper">
+				<h1 ng-click="getBookList()"> Books </h1>
+				<form method="GET">
+					<div id="search-menu">
+						<input class="search" type="search" placeholder="Search" ng-model="search">
+						<button class="btn btn-primary" ng-click="searchExpression = search;">go</button>
+						<button class="btn btn-primary" ng-click="searchExpression = ''; search=''; ">clear</button>
+					</div>
+				</form>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>
+								<a href="#" ng-click="sortType = 'title'; sortReverse = !sortReverse">
+									Title
+									<span ng-show="sortType == 'title' && !sortReverse" class="arrow-down"></span>
+									<span ng-show="sortType == 'title' && sortReverse" class="arrow-up"></span>
+								</a>
+							</th>
+							<th>
+								<a href="#" ng-click="sortType = 'author'; sortReverse = !sortReverse">
+									Author
+									<span ng-show="sortType == 'author' && !sortReverse" class="arrow-down"></span>
+									<span ng-show="sortType == 'author' && sortReverse" class="arrow-up"></span>
+								</a>
+							</th>
+							<th>
+								<a href="#" ng-click="sortType = 'rating'; sortReverse = !sortReverse">
+									Rating
+									<span ng-show="sortType == 'rating' && !sortReverse" class="arrow-down"></span>
+									<span ng-show="sortType == 'rating' && sortReverse" class="arrow-up"></span>
+								</a>
+							</th>
+							<th>
+								<a href="#" ng-click="sortType = 'progress'; sortReverse = !sortReverse">
+									Progress
+									<span ng-show="sortType == 'progress' && !sortReverse" class="arrow-down"></span>
+									<span ng-show="sortType == 'progress' && sortReverse" class="arrow-up"></span>
+								</a>
+							</th>
+							<th>
+								<a href="#" ng-click="sortType = 'dateAdded'; sortReverse = !sortReverse;">
+									Date Added
+									<span ng-show="sortType == 'dateAdded' && !sortReverse" class="arrow-down"></span>
+									<span ng-show="sortType == 'dateAdded' && sortReverse" class="arrow-up"></span>
+								</a></th>
+							<th>
+								<a href="#" ng-click="sortType = 'lastModified'; sortReverse = !sortReverse">
+									Last Modified
+									<span ng-show="sortType == 'lastModified' && !sortReverse" class="arrow-down"></span>
+									<span ng-show="sortType == 'lastModified' && sortReverse" class="arrow-up"></span>
+								</a>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- <tr data-row-id="{{book.id}}" ng-repeat="book in bookList | filter: searchExpression | orderBy: sortType: sortReverse"> -->
+						<tr data-row-id="{{book.id}}" ng-repeat="book in filteredBookList = (bookList | filter : searchExpression) | orderBy: sortType: sortReverse">
+							<td> <a href="#" ng-click="editBook(book._id)">{{book.title}} </a> </td>
+							<td> {{book.author}} </td>
+							<td> {{book.rating === 0 ? 'N/A': book.rating }} </td>
+							<td>
+								<a href="progress.html" id="progressEdit" ng-click="progressBook(book._id)"></a>
+									<div class="progress" style = "width:100px">
+										<div class="progress-bar" role="progressbar" aria-valuenow="{{book.progress / book.pages * 100}}"
+										aria-valuemin="0" aria-valuemax="100" style="width:{{book.progress / book.pages * 100}}%">
+											{{Math.ceil(book.progress / book.pages * 100) + "%"}}
+										</div>
+									</div>
+							</td>
+							<td> {{book.dateAdded |  date:'MM/dd/yyyy'}} </td>
+							<td> {{book.dateModified |  date:'MM/dd/yyyy'}} </td>
+						</tr>
+						<tr ng-show="filteredBookList.length === 0 && bookList.length > 0"><td colspan="6"> Search did not return any books. </td></tr>
+						<tr ng-show="bookList.length === 0"><td colspan="6"> You have no books yet, add some. </td></tr>
+					</tbody>
+				</table>
+
+			</div>
+			<div id="defaultFooter">
+			</div>
+
+		</div>
+	</body>
+</html>

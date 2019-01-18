@@ -1,0 +1,55 @@
+<!doctype html>
+<html ng-app="add.book">
+<head>
+	<title> GoodyReads </title>
+	<link rel="stylesheet" href="./public/styles/bootstrap.css">
+	<link rel="stylesheet" href="./public/styles/main.css">
+	<script src="./public/js/refresh.js"></script>
+	<script src="./public/vendors/angular.js"></script>
+	<script src="./public/js/addBook.js"></script>
+</head>
+
+<body ng-controller="AddBookController">
+	<input type="hidden" id="refresh" value="no">
+	<div id="defaultContainer">
+		<div id="defaultHeader">
+			<h1> goody<span>reads</span></h1>
+		</div>
+		<nav class="navig">
+			<ul>
+				<li><a href="dashboard.html">Dashboard</a></li>
+				<li class="active"><a href="addBook.html">Add book</a></li>
+				<li><a href="/logout">Logout</a></li>
+			</ul>
+		</nav>
+		<div id="defaultWrapper">
+			<h1> Add a book </h1>
+			<form novalidate>
+				<ul>
+					<li>
+						<input type="text" name="title" placeholder="Book Title" id="title" class="form-control" ng-model="book.title">
+					</li>
+					<li>
+						<input type="text" name="author" placeholder="Book Author" id="author" class="form-control" ng-model="book.author">
+					</li>
+					<li>
+							<input type="text" name="edition" placeholder="Edition" id="edition" class="form-control" ng-model="book.edition">
+					</li>
+					<li>
+						<input type="number" name="pages" placeholder="No. of pages" id="pages" class="form-control" ng-model="book.pages">
+					</li>
+					<li id="addEditBook">
+						<button type="submit" name="add" class="btn btn-primary"  ng-click="addBook()">Add</button>
+						<button type="submit" name="cancel" class="btn btn-primary " ng-click="cancel()">Cancel</button>
+					</li>
+			</ul>
+			</form>
+		</div>
+
+		<div id="defaultFooter">
+		</div>
+
+	</div>
+</body>
+
+</html>
