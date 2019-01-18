@@ -118,7 +118,7 @@ app.controller('DashboardController',
 		BookListService.getBookList(setBookData);
 
 		function viewUser(user) {
-			$scope.currentUser = user.data.username;
+			$scope.currentUser = user.data.firstName;
 		}
 
 		UserService.getUser(viewUser);
