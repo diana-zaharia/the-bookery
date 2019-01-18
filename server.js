@@ -25,5 +25,5 @@ app.use('/public/assets', express.static(__dirname + '/public/assets'));
 app.use('/public/js', express.static(__dirname + '/public/js'));
 
 app.use('/', routes);
-app.listen(port);
+app.listen(process.env.PORT || port);
 console.log('search for waldo at: http://localhost:' + port);
