@@ -1,6 +1,5 @@
-![fiipractc logo](http://fiipractic.asii.ro/img/logo.png)
-# goodyreads
-Fii practic sandox app for testing
+# the-bookery
+Sandox app for testing
 
 # How to install:
-		npm install
+npm install
