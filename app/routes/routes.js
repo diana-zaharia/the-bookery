@@ -102,7 +102,6 @@ router.get('/getBookList', function(req, res) {
 });
 
 // path not protected by auth
-// TODO: check user uniqueness
 router.post('/signup', function(req, res) {
 	console.log('req.body', req.body);
 	var username = req.body.user.username;
