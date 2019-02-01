@@ -48,6 +48,13 @@
 									<span ng-show="sortType == 'author' && sortReverse" class="arrow-up"></span>
 								</a>
 							</th>
+                            <th>
+                                <a href="#" ng-click="sortType = 'edition'; sortReverse = !sortReverse">
+                                    Edition
+                                    <span ng-show="sortType == 'edition' && !sortReverse" class="arrow-down"></span>
+                                    <span ng-show="sortType == 'edition' && sortReverse" class="arrow-up"></span>
+                                </a>
+                            </th>
 							<th>
 								<a href="#" ng-click="sortType = 'rating'; sortReverse = !sortReverse">
 									Rating
