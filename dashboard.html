@@ -82,6 +82,7 @@
 						<tr data-row-id="{{book.id}}" ng-repeat="book in filteredBookList = (bookList | filter : searchExpression) | orderBy: sortType: sortReverse">
 							<td> <a href="#" ng-click="editBook(book._id)">{{book.title}} </a> </td>
 							<td> {{book.author}} </td>
+							<td> {{book.edition}} </td>
 							<td> {{book.rating === 0 ? 'N/A': book.rating }} </td>
 							<td>
 								<a href="progress.html" id="progressEdit" ng-click="progressBook(book._id)"></a>
