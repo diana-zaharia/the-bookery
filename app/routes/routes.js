@@ -110,7 +110,7 @@ router.post('/signup', function(req, res) {
 	var firstname = req.body.user.firstName;
 	var lastname = req.body.user.lastName;
 	var email = req.body.user.email;
-	if ( !(username && password && firstname && lastname && email && password.length >= 8)) {
+	if ( !(username && password && firstname && lastname && email)) {
 		return res.status(266).send();
 	}
 	var newuser = new User();
@@ -120,7 +120,6 @@ router.post('/signup', function(req, res) {
 	newuser.lastName = lastname;
 	newuser.email = email;
 
-	console.log('newUSer::', newuser);
 	newuser.save(function(err, savedUser) {
 		if(err) {
 			console.log(err);
@@ -135,7 +134,6 @@ router.post('/addBook', function(req, res) {
 	var title = req.body.book.title;
 	var author = req.body.book.author;
 	var edition = req.body.book.edition;
-	var pages = req.body.book.pages;
 	var pages = req.body.book.pages;
 	var rating = 0;
 	var progress = 0;

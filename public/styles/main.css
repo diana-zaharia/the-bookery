@@ -44,6 +44,9 @@ table {
 	border-spacing: 0;
 }
 
+.ng-submitted .ng-invalid{
+	border: 1px solid red;
+}
 
 #authContainer {
 	margin:60px auto 0 auto;

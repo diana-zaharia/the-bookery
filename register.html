@@ -23,22 +23,22 @@
 				<ul>
 					<a href="login.html" class="links"> < Back to Login</a>
 					<li>
-						<input type="text" name="username" placeholder="Username" id="username" class="form-control" ng-model="user.username">
+						<input type="text" name="username" placeholder="Username" id="username" class="form-control" ng-model="user.username" ng-minlength="4" ng-maxlength="30">
 					</li>
 					<li>
-						<input type="text" name="firstName" placeholder="First Name" id="firstName" class="form-control" ng-model="user.firstName">
+						<input type="text" name="firstName" placeholder="First Name" id="firstName" class="form-control" ng-model="user.firstName" ng-maxlength="30">
 					</li>
 					<li>
-						<input type="text" name="lastName" placeholder="Last Name" id="lastName" class="form-control" ng-model="user.lastName">
+						<input type="text" name="lastName" placeholder="Last Name" id="lastName" class="form-control" ng-model="user.lastName" ng-maxlength="30">
 					</li>
 					<li>
-						<input type="text" name="email" placeholder="E-mail" id="email" class="form-control" ng-model="user.email">
+						<input type="email" name="email" placeholder="E-mail" id="email" class="form-control" ng-model="user.email">
 					</li>
 					<li>
-						<input type="password" name="password"  placeholder="Password" id="password" class="form-control" ng-model="user.password">
+						<input type="password" name="password"  placeholder="Password" id="password" class="form-control" ng-model="user.password" ng-minlength="8">
 					</li>
 					<li>
-						<input type="password" name="confirmPassword"  placeholder="Confirm password" id="confirmPassword" class="form-control">
+						<input type="password" name="confirmPassword"  placeholder="Confirm password" id="confirmPassword" class="form-control" ng-minlength="8">
 					</li>
 					<li ng-show="registerFail === true">
 						<p style="margin-top:15px; color:red;"> Some fields are wrong! </p>
