@@ -110,7 +110,7 @@ router.post('/signup', function(req, res) {
 	var firstname = req.body.user.firstName;
 	var lastname = req.body.user.lastName;
 	var email = req.body.user.email;
-	if ( !(username && password && firstname && lastname && email)) {
+	if ( !(username && password && firstname && lastname && email && password.length >= 8)) {
 		return res.status(266).send();
 	}
 	var newuser = new User();
